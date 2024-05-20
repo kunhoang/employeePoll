@@ -1,0 +1,45 @@
+.navbar{
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    background-color: rgb(227, 225, 225);
+    border-bottom: 1px solid rgb(135, 135, 135);
+}
+
+.navbar-left{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+}
+
+.navbar-left a{
+    text-decoration: none;
+    margin-top: 2%;
+    margin-left: 1%;
+    color: black;
+}
+
+.navbar-left a:hover{
+    color: rgb(57, 138, 170);
+}
+
+.space{
+    width: 75%;
+}
+
+.navbar-rigth{
+    display: flex;
+    width: 10%;
+    justify-content: space-between;
+    margin-right: 5px;
+}
+
+.navbar-rigth a{
+    text-decoration: none;
+    margin-top: 2%;
+    color: black;
+}
+
+.navbar-rigth a:hover{
+    color: rgb(57, 138, 170);
+}

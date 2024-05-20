@@ -1,0 +1,90 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 5vh;
+    height: 10vh;
+}
+
+.logo{
+    width: 100%;
+    display: flex;
+}
+
+.img{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.form{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-user{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-user-text{
+    text-align: center;
+    font-weight: 400;
+}
+
+.text-user{
+    width: 80%;
+    margin: 0 auto;
+    height: 20px;
+    outline: none;
+}
+
+.form-password{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+.form-password-text{
+    text-align: center;
+    font-weight: 400;
+}
+
+.text-password{
+    width: 80%;
+    margin: 0 auto;
+    height: 20px;
+    outline: none;
+}
+
+.btn-submit{
+    width: 10%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    border: 1px solid rgb(129, 129, 129);
+}
+
+.btn-submit:hover{
+    background-color: rgb(110, 234, 101);
+    border: 1px solid rgb(36, 116, 14);
+}

@@ -1,0 +1,39 @@
+.leaderBoard{
+    width: 80%;
+    margin: 2% auto;
+}
+
+table{
+    width: 100%;
+}
+
+table,th,td{
+    border: 1px solid rgb(159, 159, 159);
+    border-collapse: collapse;
+}
+
+table tr th{
+    font-weight: 700;
+    background-color: aliceblue;
+}
+
+table tr th:first-child{
+    width: 50%;
+}
+
+table tr th{
+    width: 25%;
+}
+
+table td{
+    padding-left: 2%;
+}
+
+table tr td:first-child{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+    font-weight: 600;
+}
