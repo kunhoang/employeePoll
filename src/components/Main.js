@@ -1,7 +1,10 @@
 import "../assest/main.css";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Card from "./Card";
+import { useState } from "react";
 const Main = ({ authedUser, questions, users }) => {
+  const [active, setActive] = useState(true);
   const unanswered = (question) =>
     !question.optionOne.votes.includes(authedUser.id) &&
     !question.optionTwo.votes.includes(authedUser.id);
@@ -9,35 +12,47 @@ const Main = ({ authedUser, questions, users }) => {
   const answered = (question) =>
     question.optionOne.votes.includes(authedUser.id) ||
     question.optionTwo.votes.includes(authedUser.id);
-
+  const toogleShow = () => {
+    setActive((prev) => setActive(!prev));
+  };
   return (
-    <div className="main" >
-      <div className="new-question">
-        <div className="new-question-title">New Questions</div>
-        <div className="new-question-body">
-          {questions.filter(unanswered).map((question) => (
-            <div className="new-question-item" key={question.id}>
-              <span className="user">{question.author}</span>
-              <span className="time">{new Date(question.timestamp).toDateString()}</span>
-              <Link className="show" to={'/questions/' + question.id}>Show</Link>
-            </div>
-          ))}
-        </div>
+    <div className="main">
+      <div className="switch">
+        <button
+          className={`switch-button ${active ? "active" : null}`}
+          onClick={toogleShow}
+          disabled={active}
+        >
+          New questions
+        </button>
+        <button
+          className={`switch-button ${!active ? "active" : null}`}
+          onClick={toogleShow}
+          disabled={!active}
+        >
+          Answered questions
+        </button>
       </div>
-      <div className="done">
-        <div className="done-title">Done</div>
-        <div className="done-body">
-        {questions.filter(answered).map((question) => (
-            <div className="done-item" key={question.id}>
-              <span className="user">{question.author}</span>
-              <span className="time">{new Date(question.timestamp).toDateString()}</span>
-              <Link className="show" to={'/questions/' + question.id}>Show</Link>
-            </div>
-          ))}
+      {active ? (
+        <div className="new-question">
+          <div className="new-question-title">New Questions</div>
+          <div className="new-question-body">
+            {questions.filter(unanswered).map((question) => (
+              <Card question={question} />
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="done">
+          <div className="done-title">Done</div>
+          <div className="done-body">
+            {questions.filter(answered).map((question) => (
+              <Card question={question} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
-    
   );
 };
 

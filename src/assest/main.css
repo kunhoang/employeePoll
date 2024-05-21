@@ -1,10 +1,31 @@
-.main{
+.main {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+.switch {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    gap: 30px;
+}
 
-.new-question{
+.switch-button {
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.switch-button.active {
+    background-color: #bd2323;
+    color: aliceblue;
+}
+
+.new-question {
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -13,7 +34,7 @@
     border: 1px solid rgb(176, 176, 176);
 }
 
-.new-question-title{
+.new-question-title {
     text-align: center;
     padding: 10px 0;
     border-bottom: 1px solid rgb(176, 176, 176);
@@ -21,14 +42,14 @@
     font-weight: 700;
 }
 
-.new-question-body{
+.new-question-body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 10px 10px;
 }
 
-.new-question-item{
+.new-question-item {
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(176, 176, 176);
@@ -37,16 +58,16 @@
     margin-top: 1%;
 }
 
-.user{
+.user {
     font-family: 700;
     font-size: 20px;
 }
 
-.time{
+.time {
     color: rgb(135, 135, 134);
 }
 
-.show{
+.show {
     border: 1px solid greenyellow;
     background-color: white;
     padding: 2% 0;
@@ -56,12 +77,12 @@
     text-decoration: none;
 }
 
-.show:hover{
+.show:hover {
     background-color: greenyellow;
     color: white;
 }
 
-.done{
+.done {
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -70,7 +91,7 @@
     border: 1px solid rgb(176, 176, 176);
 }
 
-.done-title{
+.done-title {
     text-align: center;
     padding: 10px 0;
     border-bottom: 1px solid rgb(176, 176, 176);
@@ -78,14 +99,14 @@
     font-weight: 700;
 }
 
-.done-body{
+.done-body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 10px 10px;
 }
 
-.done-item{
+.done-item {
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(176, 176, 176);
@@ -94,6 +115,6 @@
     margin-top: 1%;
 }
 
-.content-anwser{
+.content-anwser {
     height: 50px;
 }

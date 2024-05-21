@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { useState } from "react";
 import { handleLogin } from "../actions/authedUser";
 const Login = ({ dispatch, loggedIn }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("sarahedo");
+  const [password, setPassword] = useState("password123");
 
   const handleUsername = (e) => {
     setUsername(e.target.value);

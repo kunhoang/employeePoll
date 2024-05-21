@@ -13,7 +13,7 @@ const Navbar = ({dispatch, authedUserId}) => {
             <div className="navbar-left">
                 <Link to="/">Home</Link>
                 <Link to="/leaderboard">LeaderBoard</Link>
-                <Link to="/new">New</Link>
+                <Link to="/add">New</Link>
             </div>
             <div className='space'></div>
             <div className="navbar-rigth">
