@@ -40,13 +40,13 @@ const Detail = ({ dispatch, question, authedUser }) => {
   const answerOne = (e) => {
     e.preventDefault();
     dispatch(handleAddAnswer(question.id, "optionOne"));
-    navigate("/");
+    // navigate("/");
   };
 
   const answerTwo = (e) => {
     e.preventDefault();
     dispatch(handleAddAnswer(question.id, "optionTwo"));
-    navigate("/");
+    // navigate("/");
   };
 
   return (

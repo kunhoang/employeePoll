@@ -29,16 +29,20 @@ function addAnswerQuestion(author, qid, answer) {
 }
 
 export function handleAddQuestion(firstOption, secondOption) {
-  return async (dispatch, getState) => {
+  return (dispatch, getState) => {
     const { authedUser } = getState();
-    const question = await saveQuestion(firstOption, secondOption, authedUser);
-    dispatch(addQuestion(question));
-    dispatch(addQuestionUser(question));
+
+    return saveQuestion(firstOption, secondOption, authedUser).then(
+      (question) => {
+        dispatch(addQuestion(question));
+        dispatch(addQuestionUser(question,question.id));
+      }
+    );
   };
 }
 
 export function handleAddAnswer(questionId, answer) {
-  return async (dispatch, getState) => {
+  return (dispatch, getState) => {
     const { authedUser } = getState();
     return saveQuestionAnswer(authedUser.id, questionId, answer).then(() => {
       dispatch(addAnswerQuestion(authedUser.id, questionId, answer));

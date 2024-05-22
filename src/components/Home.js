@@ -21,9 +21,6 @@ const Home = ({ dispatch, loggedIn }) => {
   useEffect(() => {
     dispatch(handleInitialData());
   });
-  const location = useLocation();
-  const activeLink = location.pathname;
-  const navigate = useNavigate();
   return (
     <div>
       {loggedIn && <Navbar />}

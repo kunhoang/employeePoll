@@ -1,6 +1,6 @@
 import "../assest/login.css";
 import image from "../image/image.jpg";
-import { useNavigate, Routes, Route } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { useState } from "react";
 import { handleLogin } from "../actions/authedUser";
@@ -16,15 +16,18 @@ const Login = ({ dispatch, loggedIn }) => {
     setPassword(e.target.value);
   };
   const navigate = useNavigate();
-  // if (loggedIn) {
-  //   navigate("/");
-  // }
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirectUrl = urlParams.get('redirectTo');
+  if (loggedIn) {
+    return <Navigate to={redirectUrl ? redirectUrl : "/"}/>;
+}
 
   const handleSubmit = () => {
+    console.log(redirectUrl)
     dispatch(handleLogin(username, password));
     setUsername("");
     setPassword("");
-    navigate("/");
+    // navigate("/");
   };
 
   return (

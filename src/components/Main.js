@@ -36,18 +36,22 @@ const Main = ({ authedUser, questions, users }) => {
       {active ? (
         <div className="new-question">
           <div className="new-question-title">New Questions</div>
-          <div className="new-question-body">
+          <div className="done-body">
             {questions.filter(unanswered).map((question) => (
-              <Card question={question} />
+              <div key={question.id} className="done-back">
+                <Card question={question} />
+              </div>
             ))}
           </div>
         </div>
       ) : (
-        <div className="done">
-          <div className="done-title">Done</div>
+        <div className="new-question">
+          <div className="new-question-title">Done</div>
           <div className="done-body">
             {questions.filter(answered).map((question) => (
-              <Card question={question} />
+              <div key={question.id} className="done-back">
+                <Card question={question} />
+              </div>
             ))}
           </div>
         </div>

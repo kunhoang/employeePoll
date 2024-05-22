@@ -11,9 +11,14 @@ const LeaderBoard = ({ users, authedUser }) => {
         </tr>
         {users.map((user) => (
           <tr key={user.id}>
-            <td>
-              <span className="name">{user.name}</span>
-              <span className="username">{user.id}</span>
+            <td className="first">
+              <div className="left">
+                <img src={user.avatarURL} className="img"/>
+              </div>
+              <div className="right">
+                <span className="name">{user.name}</span>
+                <span className="">{user.id}</span>
+              </div>
             </td>
             <td>{Object.keys(user.answers).length}</td>
             <td>{user.questions.length}</td>

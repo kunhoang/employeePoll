@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { handleAddQuestion } from "../actions/questions";
 import {_getQuestions} from '../util/_DATA.js'
+import image from "../image/image.jpg";
 const New = ({ dispatch }) => {
   const [firstOption, setFirstOption] = useState("");
   const [secondOption, setSecondOption] = useState("");
@@ -27,6 +28,9 @@ const New = ({ dispatch }) => {
   return (
     <div className="new">
       <div className="new-title">Would You Rather</div>
+      <div className="logo">
+        <img src={image} className="img" />
+      </div>
       <div className="description">
         <p>Create your own poll</p>
       </div>

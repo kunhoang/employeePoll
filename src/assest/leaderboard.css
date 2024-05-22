@@ -29,11 +29,27 @@ table td{
     padding-left: 2%;
 }
 
-table tr td:first-child{
-    display: flex;
-    flex-direction: column;
-}
 
 .name{
     font-weight: 600;
+}
+
+.first{
+    display: flex;
+    flex-direction: row;
+}
+
+.left{
+    width: 10%;
+}
+
+.img{
+    width: 50px!important;
+    height: 50px!important;
+}
+
+.right{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
 }
